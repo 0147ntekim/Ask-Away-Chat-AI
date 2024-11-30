@@ -1,0 +1,12 @@
+/**
+ * @copyright 2024 Oba.codes
+ * @license Apache-2.0
+ */
+
+
+import banner from './banner.webp';
+import logo from './logos.png';
+import iconLogo from './logo-icon.svg';
+
+
+export { banner, iconLogo, logo }
