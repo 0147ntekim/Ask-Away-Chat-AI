@@ -7,7 +7,9 @@
  * genetrate a unique id by combinig the current timestamp and a random number
  * 
  * this function creates an identifier using the current time in miliseconds
- * @return {string}
+ * (converted to a base-36 string) concatenated with a random number ,
+ * also converted to a base-36 string and sliced to remove unnecessary characters
+ * @return {string} A unique indentifier string
  */
 
 export default function generateID(){

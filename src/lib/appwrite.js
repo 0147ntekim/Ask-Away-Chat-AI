@@ -14,11 +14,10 @@ const client = new Client()
 
 client
     .setEndpoint('https://cloud.appwrite.io/v1') // Your API Endpoint
-    .setProject('intelligence-chat-ai')
-;
-    
+    .setProject('674c8091002063a70ad4');
 
 
 const account = new Account(client);
 
+    
 export { account };

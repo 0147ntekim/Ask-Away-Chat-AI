@@ -29,6 +29,7 @@ const Register = () => {
     return(
        <>
             <PageTitle title='Create an account'/>
+
             <div className='relative w-screen h-dvh p-2 grid grid-cols-1 lg:grid-cols-[1fr,1.2fr] lg:gap-2'>
                 <div className="flex flex-col p-4">
                     <Link 
@@ -63,7 +64,7 @@ const Register = () => {
                             />
                             <TextField
                                 type='email'
-                                name='emaial'
+                                name='email'
                                 label='Email'
                                 placeholder='Enter your email'
                                 required={true}
