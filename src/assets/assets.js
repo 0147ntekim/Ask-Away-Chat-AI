@@ -5,8 +5,8 @@
 
 
 import banner from './banner.webp';
-import logo from './logos.png';
-import iconLogo from './logo-icon.svg';
+import logo from './logos.svg';
+import iconLogo from './favourite.svg';
 
 
 export { banner, iconLogo, logo }

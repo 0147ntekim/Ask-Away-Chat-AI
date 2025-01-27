@@ -10,6 +10,12 @@ import { RouterProvider } from 'react-router-dom'
 
 
 /**
+ * components modules
+ */
+
+import SnackbarProvider from './contexts/SnackbarContext';
+
+/**
  * custom modules
  */
 import router from './routers/routes';
@@ -22,6 +28,8 @@ import './index.css';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router}/>
+    <SnackbarProvider>
+      <RouterProvider router={router}/> 
+    </SnackbarProvider>
   </StrictMode>,
 );

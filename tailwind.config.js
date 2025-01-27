@@ -5,6 +5,7 @@ export default {
     extend: {
       transitionProperty: {
         'color-transform': 'color, transform',
+        'transform-opacity-visibility': 'transform, opacity, visibility',
       },
       fontFamily: {
         sans: ['DM Sans', 'sans-serif'],
