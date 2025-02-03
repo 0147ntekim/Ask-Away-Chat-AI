@@ -1,5 +1,5 @@
 /**
- * @copyright 2024 oba.codes
+ * @copyright 2025 oba.codes
  * @license Apache-2.0
  */
 
