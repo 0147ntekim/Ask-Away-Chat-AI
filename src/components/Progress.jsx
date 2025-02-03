@@ -22,7 +22,7 @@ const CircularProgress = ({ classes = '', size = '' }) => {
 CircularProgress.propTypes = {
     classes: PropTypes.string,
     size: PropTypes.string,
-}
+};
 
 /**
  * Linear progress
