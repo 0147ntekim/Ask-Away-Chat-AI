@@ -107,7 +107,7 @@ const Login = () => {
                         <p className="text-bodyMedium text-light-onSurfaceVariant dark:text-dark-onSurfaceVariant text-center mt-4">
                             Don&apos;t have an account?
 
-                            <Link to='/login' className='link text-labelLarge inline-block ms-1 text-light-onSurface dark:text-dark-onSurface'>
+                            <Link to='/register' className='link text-labelLarge inline-block ms-1 text-light-onSurface dark:text-dark-onSurface'>
                                 Create an account 
                             </Link>
                         </p>

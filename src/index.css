@@ -261,8 +261,7 @@
     rounded-full
     mx-1
     overflow-hidden
-    origin-top
-    ;
+    origin-top;
   }
 
   .linear-progress.active-indicator{
@@ -367,7 +366,8 @@
     min-w-[32px]
     max-w-[32px]
     overflow-hidden
-    rounded-full;
+    rounded-full !important
+    ;
   }
 
   /**

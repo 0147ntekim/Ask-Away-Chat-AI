@@ -47,14 +47,14 @@ const LinearProgress = ({ classes = '' }) => {
             scaleY: 0,
             transition: {
                 duration: 0.1,
-                ease: 'easeOut'
+                ease: 'easeOut',
             },
         },
     };
 
     const activeIndicatorVariant = {
-        start: { translate: '-100%' },
-        end: { translate: '100%' },
+        start: { translateX: '-100%' },
+        end: { translateX: '100%' },
     };
 
 
