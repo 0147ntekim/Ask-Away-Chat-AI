@@ -42,7 +42,19 @@ const getConversationTitle = async (userPrompt) => {
  * @returns {Promise<string>} A promise that resolves with the AI's response, or rejects with an error.
  */
 const getAiResponse = async (userPrompt, chats = []) => {
-
+    const history = [];
+    chats.forEach(({ user_prompt, ai_response }) => {
+        history.push(
+        {
+            role: 'user',
+            parts: [{ text: user_prompt }],
+        },
+        {
+            role: 'model',
+            parts: [{ text: ai_response }],
+        },
+        );
+    });
 
     try {
         model.generationConfig = { temperature: 1.5 };

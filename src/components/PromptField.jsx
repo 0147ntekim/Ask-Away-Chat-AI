@@ -8,7 +8,7 @@
  */
 import { motion } from "framer-motion"
 import { useRef, useCallback, useState} from "react";
-import { useNavigation, useSubmit } from "react-router-dom";
+import { useNavigation, useSubmit, useParams } from "react-router-dom";
 /**
  * components
  */
@@ -27,6 +27,9 @@ const PromptField = () => {
     
     // initial navigation for checking state
     const navigation = useNavigation();
+
+    // Retrieve the conversationId from url path
+    const { conversationId } = useParams();
 
     // State for input field
     const [placeholderShown, setPlaceholderShown] = useState(true);
@@ -86,13 +89,13 @@ const PromptField = () => {
             {
               method: 'POST',
               encType: 'application/x-www-form-urlencoded',
-              action: '/',
+              action: `/${conversationId || ''}`,
             },
         );
 
         inputField.current.innerHTML = '';
         handleInputChange();
-    }, [handleInputChange, inputValue, navigation.state, submit ]);
+    }, [handleInputChange, inputValue, navigation.state, submit, conversationId]);
 
 
     // Defines a Framer Motion variant for the prompt field, controlling its animation based on its visibility state.

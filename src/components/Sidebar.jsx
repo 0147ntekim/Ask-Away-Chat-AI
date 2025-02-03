@@ -8,8 +8,16 @@
  * Node modules
  */
 import PropTypes from 'prop-types';
-import { NavLink, useLoaderData } from 'react-router-dom';
+import { NavLink, useLoaderData, useSubmit, useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
+
+
+/**
+ * Custom modules
+ */
+import deleteConversation from '../utils/deleteConversation';
+
+
 /**
  * Components
  */
@@ -20,10 +28,15 @@ import { IconBtn } from './Button';
 const Sidebar = ({  isSidebarOpen, toggleSidebar  }) => {
     
     // Extract conversations from loader data if it exists.
-    const {conversation:{
+    const {conversations:{
         documents:conversationData
     }} = useLoaderData() || {};
-    
+
+    // Extract the conversationId from the URL parameters using useParams.
+    const { conversationId } = useParams();
+
+    // Get a reference to the useSubmit function for submitting forms.
+    const submit = useSubmit();
 
 
   return (
@@ -36,14 +49,15 @@ const Sidebar = ({  isSidebarOpen, toggleSidebar  }) => {
         >
             <div className="sidebar-inner">
                 <div className="h-16 grid items-center px-4 mb-4 ">
-                    {/* logo */}
                     <Logo />
                 </div>
+
                 <ExtendedFab
                     href='/'
                     text='New chat'
                     classes='mb-4 mt-5'
                     onClick={toggleSidebar}
+                    disabled={!conversationId}
                 />
 
                 <div className="overflow-y-auto -me-2 pe-1">

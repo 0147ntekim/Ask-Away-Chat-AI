@@ -23,6 +23,8 @@ import Login from '../pages/Login.jsx';
 import ResetLink from '../pages/ResetLink.jsx';
 import ResetPassword from '../pages/ResetPassword.jsx';
 import Conversation from '../pages/Conversation.jsx';
+import ConversationError from '../pages/ConversationError.jsx';
+import RootError from '../pages/RootError.jsx';
 
 /**
  * losders
@@ -43,6 +45,7 @@ import loginAction from './actions/loginAction.js';
 import resetLinkAction from './actions/resetLinkAction.js';
 import resetPasswordAction from './actions/resetPasswordAction.js';
 import appAction from './actions/appAction.js';
+import conversationAction from './actions/conversationAction.js';
 
 /**
  * Router
@@ -54,11 +57,14 @@ const router = createBrowserRouter([
         element: <App />,
         loader: appLoader,
         action: appAction,
+        errorElement: <RootError />,
         children: [
             {
                 path: '/:conversationId',
                 element: <Conversation />,
                 loader: conversationLoader,
+                action: conversationAction,
+                errorElement: <ConversationError />
             }
         ]
     },

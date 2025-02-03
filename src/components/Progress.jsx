@@ -11,6 +11,7 @@
 import PropTypes from "prop-types";
 import { motion } from "motion/react";
 
+
 const CircularProgress = ({ classes = '', size = '' }) => {
     return(
         <div role="progressbar" className={`circular-progress ${size} ${classes}`}></div>
@@ -51,7 +52,7 @@ const LinearProgress = ({ classes = '' }) => {
         },
     };
 
-    const activeindicatorVariant = {
+    const activeIndicatorVariant = {
         start: { translate: '-100%' },
         end: { translate: '100%' },
     };
@@ -68,7 +69,7 @@ const LinearProgress = ({ classes = '' }) => {
         >
 
             <motion.div 
-                variants={activeindicatorVariant} 
+                variants={activeIndicatorVariant} 
                 transition={{
                     repeat: Infinity,
                     duration: 1.5,

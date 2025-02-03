@@ -74,6 +74,32 @@ const userPromptAction = async (formData) => {
 };
 
 /**
+ * Deletes a conversation document from the database and returns the conversation title.
+ *
+ * @async
+ * @function conversationAction
+ * @param {FormData} formData - The form data containing the conversation details.
+ * @returns {Promise<Object>} Returns an object containing the conversation title after deletion.
+ * @throws Will throw an error if the deletion process fails.
+ */
+const conversationAction = async (formData) => {
+    const conversationId = formData.get('conversation_id');
+    const conversationTitle = formData.get('conversation_title');
+  
+    try {
+      await databases.deleteDocument(
+        import.meta.env.VITE_APPWRITE_DATABASE_ID,
+        'ask-away-collection',
+        conversationId,
+      );
+  
+      return { conversationTitle };
+    } catch (err) {
+      console.log(`Error in deleting conversation: ${err.message}`);
+    }
+  };
+
+/**
  * Handles incoming requests based on the `request_type` form data.
  *
  * @async
@@ -87,6 +113,11 @@ const appAction = async ({ request }) => {
 
     if (requestType === 'user_prompt'){
         return await userPromptAction(formData);
+    }
+
+
+    if (requestType === 'delete_conversation') {
+        return await conversationAction(formData);
     }
 };
 

@@ -6,7 +6,7 @@
 /**
  * Node Modules
  */
-import { useNavigation, useNavigate, useLoaderData } from 'react-router-dom'
+import { useNavigation, useNavigate, useLoaderData, useParams, useSubmit } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 import PropTypes from 'prop-types';
 
@@ -15,6 +15,7 @@ import PropTypes from 'prop-types';
  * custom modules
  */
 import logout from '../utils/logout'
+import deleteConversation from '../utils/deleteConversation';
 /**
  * Custom Hooks 
 */
@@ -46,7 +47,19 @@ const TopAppBar = ({ toggleSidebar }) => {
   /**
    *  - user: User data for the currently logged-in user.
   */
-  const {user} = useLoaderData();
+  const { conversations, user } = useLoaderData();
+
+  /**
+   * params Object containing URL parameters, including the conversationId.
+   */
+  const params = useParams();
+
+    /**
+   * Obtain the useSubmit hook for handling form submissions:
+   * - submit: Function for submitting forms and triggering server-side actions.
+   */
+  const submit = useSubmit();
+
 
   /**
    * use d custom hook to manage the menu's show state.
@@ -77,6 +90,26 @@ const TopAppBar = ({ toggleSidebar }) => {
           <Logo classes='lg:hidden'/>
         </div>
 
+        {params.conversationId && (
+          <IconBtn
+            icon='delete'
+            classes='ms-auto me-1 lg:hidden'
+            onClick={() => {
+              //find the current conversation title
+              const { title } = conversations.documents.find(
+                ({ $id }) => params.conversationId === $id,
+              );
+  
+              deleteConversation({
+                id: params.conversationId,
+                title,
+                submit,
+              });
+  
+            }}
+          />
+        )}
+
         <div className="menu-wrapper">
           <IconBtn onClick={setShowMenu}>
             <Avatar name={user.name}/>
@@ -93,6 +126,7 @@ const TopAppBar = ({ toggleSidebar }) => {
     </header>
   )
 }
+
 
 TopAppBar.propTypes = {
   toggleSidebar: PropTypes.func,
