@@ -366,7 +366,7 @@
     min-w-[32px]
     max-w-[32px]
     overflow-hidden
-    rounded-full !important
+    rounded-full 
     ;
   }
 
@@ -517,13 +517,13 @@
     text-light-onPrimaryContainer
     dark:text-dark-onPrimaryContainer
     text-labelLarge
-    max-w-max
+    max-w-[150px]
     flex
     items-center
     gap-2
-    h-[50px]
-    ps-3
-    pe-4
+    h-[52px]
+    ps-1
+    pe-5
     rounded-large
     shadow-elevation1
     transition-shadow
@@ -603,7 +603,7 @@
 
   @media (prefers-color-scheme: dark) {
     .prompt-field-container {
-      --state-layer-bg: theme('colors.dark.onSurfaceVariant');
+      --state-layer-bg: theme('colors.light.onSurfaceVariant');
     }
   }
 

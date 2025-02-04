@@ -32,7 +32,7 @@ const LinearProgress = ({ classes = '' }) => {
     // Defines Framer Motion variants for animating a progress bar and an active indicator
 
     const progressbarVariant = {
-        start: { scale: 0 },
+        start: { scaleY: 0 },
         end: {
             scaleY: 1,
             transition: {

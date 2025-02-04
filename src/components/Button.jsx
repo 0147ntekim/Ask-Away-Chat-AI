@@ -71,7 +71,7 @@ const ExtendedFab = ({ href, text, classes = '', ...rest }) => {
       className={`extended-fab ${classes}`}
       {...rest}
     >
-      <span className='material-symbols-rounded'>add</span>
+      <span className='material-symbols-rounded pl-5'>add</span>
 
       <span className='truncate'>{text}</span>
 

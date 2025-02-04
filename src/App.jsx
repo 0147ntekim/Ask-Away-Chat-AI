@@ -130,7 +130,7 @@ const App = () => {
                 initial={{ opacity: 0, translateY: '-4px' }}
                 animate={{ opacity: 1, translateY: 0 }}
                 transition={{ duration: 0.2, delay: 0.8, ease: 'easeOut' }} 
-                className="text-bodySmall text-center text-light-onSurfaceVariant dark:text-dark-onSurfaceVariant p-3"
+                className="text-bodySmall text-center text-light-onSurfaceVariant dark:text-light-onSurfaceVariant p-3"
               >
                 Ask-Away is not infallible. Verify vital information.
                 <br />
