@@ -103,7 +103,7 @@ const Sidebar = ({  isSidebarOpen, toggleSidebar  }) => {
                 </div>
 
                 <div className="mt-4 h-14 px-4 grid items-center text-labelLarge text-light-onSurfaceVariant dark:text-dark-onSurfaceVariant border-t border-light-surfaceContainerHigh dark:border-dark-surfaceContainerHigh truncate">
-                    &copy; 2024 Oba.codes
+                    &copy; 2025 Oba.codes
                 </div>
             </div>
         </motion.div>
