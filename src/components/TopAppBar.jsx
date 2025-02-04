@@ -111,7 +111,7 @@ const TopAppBar = ({ toggleSidebar }) => {
         )}
 
         <div className="menu-wrapper">
-          <IconBtn onClick={setShowMenu}>
+          <IconBtn onClick={setShowMenu} classes='pl-1'>
             <Avatar name={user.name}/>
           </IconBtn>
 
